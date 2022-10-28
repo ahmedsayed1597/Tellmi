@@ -1,0 +1,37 @@
+.sign-up{
+    background-image: url('src/assets/envolope1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: calc(100vh - 62px);
+    background-position: center center;
+   
+}
+
+input{
+
+   background-color: transparent;
+    
+}
+
+.bg-btn{
+    transition: 0.2s;
+    opacity: 0.3;
+    background-color: white;
+}
+
+.bg-btn:hover{
+    opacity: 0.8;
+}
+
+.form-control{
+    border: none;
+    border-bottom: 1px solid white;
+    border-radius: 0px;
+    color: rgb(0, 122, 197);
+}
+
+.header{
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+}

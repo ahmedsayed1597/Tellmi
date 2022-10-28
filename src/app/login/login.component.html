@@ -1,0 +1,42 @@
+<section id="sign-up">
+    <div class="sign-up d-flex justify-content-center align-items-center">
+    <div class="sign-form w-75 p-4">
+
+        <div class="mt-2 mb-2 header text-center"> Sign in </div>
+
+        <form [formGroup]="registerationForm" (ngSubmit)="onSubmit(registerationForm)">
+            <div>
+                <h1 class="text-success text-center" *ngIf="responseMessage == 'success'">{{responseMessage}}</h1>
+                <h1 class="text-danger  text-center" *ngIf="responseMessage != 'success'">{{responseMessage}}</h1>
+            </div>
+
+            
+            <input formControlName="email" type="email" class="form-control my-3" placeholder="Enter Your Email">
+
+            <p class="text-danger text-bold ms-md-3 "
+                *ngIf="registerationForm.controls['email']?.errors?.['required']  && registerationForm.controls.email.touched">
+                Please enter your email
+            </p>
+
+            <p class="text-danger text-bold ms-md-3 "
+                *ngIf="registerationForm.controls['email']?.errors?.['email']  && registerationForm.controls.email.touched">
+                Please enter vaild email
+            </p>
+
+            <input formControlName="password" type="password" class="form-control my-3"
+                placeholder="Enter Your Password">
+
+            <p class="text-danger text-bold ms-md-3 "
+                *ngIf="registerationForm.controls['password']?.errors?.['required']  && registerationForm.controls.password.touched">
+                Please enter your password
+            </p>
+
+            <button  class="bg-btn text-black btn w-100 my-3">Log in</button> -->
+
+            <div class="text-center text-light mt-5">Doesn't have an a acount? <a routerLink="/signup">Register here</a></div>
+        </form>
+
+    </div>
+    </div>
+</section>
+

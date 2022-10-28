@@ -1,0 +1,24 @@
+<section id="favourite-message">
+    <div class="home container">
+<div class="row bg-home rounded-3 pt-4 pb-2 mt-5">
+    <div *ngIf="messages == ''" class="text-center pb-3"><span class="no-message">No Favourites yet! </span>  <i class="fa-solid fa-face-sad-tear"></i></div>
+    <div class="col-12" *ngFor="let message of messages; let indx = index">
+        <div class="message d-flex justify-content-between align-items-center">
+            <p class="me-5">{{message.message}}</p>
+            <div>
+            <button class="heart-btn"  (click)="updateMessageStatus(message._id, indx)" *ngIf="!elemntID[indx]">
+                <i class="fa-heart fa-regular"></i>
+           
+            </button>
+            <button class="heart-btn"  (click)="updateMessageStatus(message._id, indx)" *ngIf="elemntID[indx]">
+                <i class="fa-heart fa-solid"></i>
+                 
+            </button>
+        </div>
+        </div>
+        <p class="date d-block">{{message.createdAt | date : 'short'}}</p>
+        <div class="line me-auto ms-auto mb-4 mt-1"></div>
+        </div>
+  </div>
+    </div>
+</section>

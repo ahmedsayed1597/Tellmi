@@ -1,0 +1,61 @@
+
+
+.comment-name{
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.comment{
+    background-color: rgb(245, 238, 238);
+    color: beige;
+    
+}
+
+/* .avatar{
+    width: 130px;
+    height: 130px;
+    
+} */
+
+.img-button{
+    border: none;
+    background-color: transparent;
+}
+
+
+.line{
+    height: 1px;
+    background-color: green;
+}
+
+.bg-profile{
+    background-color: rgb(241, 235, 235);
+}
+
+.btn-password{
+    margin-top: 100px;
+}
+
+.btn-change-data{
+    margin-top: 100px;
+}
+
+button{
+    background-color: aliceblue;
+    border: none;
+    width: 100%;
+}
+.header-font{
+    font-size: 1.5rem;
+    font-weight: bolder;
+    width: 100%;
+}
+
+.modal-header{
+    background-color: blue;
+}
+
+.name-age{
+    font-size: 2.2rem;
+    font-weight: 700;
+}

@@ -1,0 +1,63 @@
+<section id="home">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <button class="mt-5 mb-5 p-2 rounded-3 url-btn" data-bs-target="#exampleModal" data-bs-toggle="modal">
+                     Share your profile to get message from friends <i class="fa-regular fa-face-smile"></i> 
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="home container">
+<div class="row bg-home rounded-3 pt-4 pb-2 mt-5 mb-5">
+    
+    <div *ngIf="messages == ''" class="text-center pb-3"><span class="no-message">No Messages yet! </span>  <i class="fa-solid fa-face-sad-tear"></i></div>
+    <div class="col-12" *ngFor="let message of messages; let indx = index">
+        <div class="message d-flex justify-content-between align-items-center">
+            <p class="me-5">{{message.message}}</p>
+            
+            <div>
+            <button class="heart-btn"  (click)="updateMessageStatus(message._id, indx)" *ngIf="!elemntID[indx]">
+                <i class="fa-heart fa-regular"></i>
+                
+                <!-- <i *ngIf="!favourite" class="fa-regular fa-heart" *ngSwitchCase="true"></i>
+                <i *ngIf="favourite" class="fa-solid fa-heart" ngSwitchCase="false"></i> -->
+           
+            </button>
+            <button class="heart-btn"  (click)="updateMessageStatus(message._id, indx)" *ngIf="elemntID[indx]">
+                <i class="fa-heart fa-solid"></i>
+                
+                <!-- <i *ngIf="!favourite" class="fa-regular fa-heart" *ngSwitchCase="true"></i>
+                <i *ngIf="favourite" class="fa-solid fa-heart" ngSwitchCase="false"></i> -->
+           
+            </button>
+        </div>
+       
+        </div>
+        <p class="date d-block">{{message.createdAt | date : 'short'}}</p>
+        <div class="line me-auto ms-auto mb-4 mt-1"></div>
+        </div>
+  </div>
+    </div>
+</section>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Share your profile</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <a target="_blank" href="{{location}}/sendMessage/{{userID}}"> {{location}}/sendMessage/{{userID}}</a> 
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary"data-bs-dismiss="modal">ok</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

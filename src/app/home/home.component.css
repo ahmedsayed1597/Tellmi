@@ -1,0 +1,46 @@
+.bg-home{
+    background-color:  beige;
+}
+
+.heart-btn{
+    background-color: transparent;
+    border: none;
+}
+
+.fa-heart{
+    color: red;
+    font-size: 1.2rem;
+}
+
+.fa-face-sad-tear{
+    font-size: 1.5rem;
+    color: red;
+}
+.no-message{
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.date{
+    color: gray;
+    font-size: 0.75rem;
+}
+
+.line{
+    text-align: center;
+    height: 1px;
+    width: 75%;
+    border-bottom: 1px solid green;
+}
+
+.url-btn{
+    font-size: 1.3rem;
+    color: whitesmoke;
+    font-weight: 600;
+    background-color: green;
+}
+
+.fa-face-smile{
+    font-size: 1.3rem;
+    color: white;
+}

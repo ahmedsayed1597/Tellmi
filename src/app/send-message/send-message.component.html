@@ -1,0 +1,61 @@
+<div class="root py-5">
+<div class="container text-center py-5 text-center">
+    <h1 class="text-success text-center messge-margin" >{{responseMessage}}</h1>
+
+    <div class="card py-5 mb-5 position-relative">
+        <a class="avatar" href="" data-toggle="modal" data-target="#profile">
+            <img src="/assets/index1.png" *ngIf=" profilePicture == ''" class="avatar " alt="">
+            <img src="{{profilePicture}}" *ngIf=" profilePicture != ''" class="avatar " alt="">
+            </a>
+        
+        <h3 class="py-2">{{user.name}}</h3>
+        <div class="container w-50 m-auto">
+            <form [formGroup]="sendMessageForm" (ngSubmit)="onSubmit(sendMessageForm)">
+                <textarea formControlName="message" class="form-control" name="" id="" cols="10" rows="9" placeholder="You cannot send a Sarahah to yourself, share your profile with your friends :)"></textarea>
+                <button class="btn btn-outline-info mt-3" type="submit" ><i class="far fa-paper-plane"></i> Send</button>
+            </form>
+        </div>
+    </div>
+    <button data-toggle="modal" data-target="#share" class="btn btn-outline-info rounded-5 btn-default-outline share" data-bs-target="#exampleModal" data-bs-toggle="modal"><i class="fas fa-share-alt"></i>  Share Profile</button>
+
+</div>
+</div>
+
+<!--  Share profile Modal -->
+<div class="modal fade" id="share" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Share Profile</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+            </div>
+            <div class="modal-body">
+                <p>host/messages/id</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Share your profile</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <p> {{location}}/sendMessage/{{userID}}</p> 
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary"data-bs-dismiss="modal">ok</button>
+        </div>
+      </div>
+    </div>
+  </div>
