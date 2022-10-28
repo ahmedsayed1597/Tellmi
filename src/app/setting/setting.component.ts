@@ -112,7 +112,9 @@ onUpdatePassword(form: any) {
    this._ApiUsersService.updateImg(formData).subscribe({
     next: (response) => {
       //localStorage.setItem('token', response.token);
-      this._ApiUsersService.getCurrentUser()
+      alert('Please Login again to update your profile');
+      this._ApiUsersService.logOut();
+      this._Router.navigate(['/login'])
     },
     error: (err) =>{
       console.log(err);
